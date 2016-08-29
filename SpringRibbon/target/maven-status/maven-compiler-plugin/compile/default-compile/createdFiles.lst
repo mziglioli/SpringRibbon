@@ -1,0 +1,9 @@
+com\core\model\User.class
+com\core\model\UserAuthority.class
+com\core\tipo\Status.class
+com\core\model\EntityJpaClass.class
+com\core\tipo\Situacao.class
+com\core\util\RestTemplateDefault.class
+com\core\util\Catalago.class
+com\core\app\SpringRibbonApp.class
+com\core\tipo\Authorities.class

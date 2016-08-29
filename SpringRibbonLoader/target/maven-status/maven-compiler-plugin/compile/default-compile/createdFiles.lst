@@ -1,0 +1,11 @@
+com\server\model\User.class
+com\server\model\UserAuthority.class
+com\server\controller\UserController.class
+com\server\tipo\Status.class
+com\server\loader\UserApplication.class
+com\server\controller\UserController$1.class
+com\server\tipo\Authorities.class
+com\server\model\EntityJpaClass.class
+com\server\controller\ControllerPackage.class
+com\server\ribbon\RibbonClientConfiguration.class
+com\server\tipo\Situacao.class
