@@ -12,8 +12,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import com.core.model.EntityJpaClass;
+import com.server.model.EntityJpaClass;
 import com.server.service.ServiceDefault;
+import com.server.util.Catalago;
 
 import lombok.Getter;
 
@@ -24,30 +25,30 @@ public abstract class RestControllerDefault<E extends EntityJpaClass, T extends 
 	@Getter
 	protected T service;
 
-	@RequestMapping(value = "/", method = RequestMethod.POST)
+	@RequestMapping(value = Catalago.URL_BASE, method = RequestMethod.POST)
 	@ResponseStatus(code = HttpStatus.OK)
 	public final void save(@Valid E entity) {
-		getService().save(entity);
+		service.save(entity);
 	}
 
-	@RequestMapping(value = "/", method = RequestMethod.PUT)
+	@RequestMapping(value = Catalago.URL_BASE, method = RequestMethod.PUT)
 	@ResponseStatus(code = HttpStatus.OK)
 	public final void update(@Valid E entity) {
-		getService().update(entity);
+		service.update(entity);
 	}
 
-	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value = Catalago.URL_ID, method = RequestMethod.DELETE)
 	@ResponseStatus(code = HttpStatus.OK)
 	public final void delete(@PathVariable Long id) {
 		service.delete(id);
 	}
 
-	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = Catalago.URL_ID, method = RequestMethod.GET)
 	public @ResponseBody E findById(@PathVariable Long id) {
 		return (E) service.findById(id);
 	}
 
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = Catalago.URL_BASE, method = RequestMethod.GET)
 	public @ResponseBody Collection<E> findAll() {
 		return service.findAll();
 	}

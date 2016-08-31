@@ -21,11 +21,11 @@
 
 	<dependencies>
 
-		<dependency>
-			<groupId>SpringRibbon</groupId>
-			<artifactId>SpringRibbon</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>SpringRibbon</groupId> -->
+<!-- 			<artifactId>SpringRibbon</artifactId> -->
+<!-- 			<version>0.0.1-SNAPSHOT</version> -->
+<!-- 		</dependency> -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>

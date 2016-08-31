@@ -8,8 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.core.model.EntityJpaClass;
+import com.server.model.EntityJpaClass;
 import com.server.service.ServiceDefault;
+import com.server.util.Catalago;
 
 import lombok.Getter;
 
@@ -20,34 +21,33 @@ public abstract class ControllerDefault<E extends EntityJpaClass, T extends Serv
 	@Getter
 	protected T service;
 
-	@RequestMapping(value = "/", method = RequestMethod.POST)
+	@RequestMapping(value = Catalago.URL_BASE, method = RequestMethod.POST)
 	public final ModelAndView save(ModelAndView model, @Valid E entity) {
-		getService().save(model, entity);
+		service.save(model, entity);
 		return model;
 	}
 
-	@RequestMapping(value = "/", method = RequestMethod.PUT)
+	@RequestMapping(value = Catalago.URL_BASE, method = RequestMethod.PUT)
 	public final ModelAndView update(ModelAndView model, @Valid E entity) {
-		getService().update(model, entity);
+		service.update(model, entity);
 		return model;
 	}
 
-	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value = Catalago.URL_ID, method = RequestMethod.DELETE)
 	public final ModelAndView delete(ModelAndView model, @PathVariable Long id) {
-		getService().delete(model, id);
+		service.delete(model, id);
 		return model;
 	}
 
-	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = Catalago.URL_ID, method = RequestMethod.GET)
 	public ModelAndView findById(ModelAndView model, @PathVariable Long id) {
-		model.addObject("entity", getService().findById(id));
+		model.addObject("entity", service.findById(id));
 		return model;
 	}
 
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = Catalago.URL_BASE, method = RequestMethod.GET)
 	public ModelAndView findAll(ModelAndView model) {
-		model.addObject("entityList", getService().findAll());
+		model.addObject("entityList", service.findAll());
 		return model;
 	}
-
 }

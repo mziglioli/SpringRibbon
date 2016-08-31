@@ -2,7 +2,7 @@ package com.server.config.security.auth;
 
 import java.util.Collection;
 
-import com.core.model.UserAuthority;
+import com.server.model.UserAuthority;
 
 import lombok.Getter;
 import lombok.Setter;

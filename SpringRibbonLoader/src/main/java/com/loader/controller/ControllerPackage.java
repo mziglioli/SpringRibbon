@@ -1,4 +1,4 @@
-package com.server.controller;
+package com.loader.controller;
 
 public interface ControllerPackage {
 

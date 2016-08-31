@@ -36,7 +36,7 @@ import lombok.ToString;
 @Table(name = "user", catalog = Catalago.DB_NAME)
 public class User implements EntityJpaClass, Serializable, UserDetails {
 
-	private static final long serialVersionUID = -8984729078206143726L;
+	private static final long serialVersionUID = 442738873666572571L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

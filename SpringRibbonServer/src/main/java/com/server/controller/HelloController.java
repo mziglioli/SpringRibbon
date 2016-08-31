@@ -6,35 +6,26 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.core.model.User;
-import com.core.model.UserAuthority;
-import com.core.tipo.Authorities;
-import com.core.tipo.Status;
+import com.server.model.User;
+import com.server.model.UserAuthority;
 import com.server.service.UserService;
+import com.server.tipo.Authorities;
+import com.server.tipo.Status;
 
 @RestController
-public class HelloController extends RestControllerDefault<User, UserService> {
+public class HelloController {
 
-	@RequestMapping(value = "/user/all")
-	public Collection<User> getAll() {
-		return service.findAll();
-	}
+	@Autowired
+	private UserService userService;
 
-	@RequestMapping(value = "/start", method = RequestMethod.GET)
-	public void auth() {
-		User user = new User();
-		user.setNome("test");
-		user.setPassword("test");
-		user.setStatus(Status.ATIVO.getDescricao());
-		user.setUsername("test");
-		Collection<UserAuthority> authorities = new HashSet<>();
-		authorities.add(new UserAuthority(Authorities.USER.getRole()));
-		user.setAuthorities(authorities);
-		service.save(user);
+	@RequestMapping(value = "/")
+	public String home() {
+		return "Hi! Welcome to ....";
 	}
 
 	@RequestMapping(value = "/greeting")
@@ -46,9 +37,18 @@ public class HelloController extends RestControllerDefault<User, UserService> {
 		return greetings.get(randomNum);
 	}
 
-	@RequestMapping(value = "/")
-	public String home() {
-		return "Hi!";
+	// FIXME
+	// remove, just to test
+	@RequestMapping(value = "/start", method = RequestMethod.GET)
+	public void auth() {
+		User user = new User();
+		user.setNome("test");
+		user.setPassword("test");
+		user.setStatus(Status.ATIVO.getDescricao());
+		user.setUsername("test");
+		Collection<UserAuthority> authorities = new HashSet<>();
+		authorities.add(new UserAuthority(Authorities.USER.getRole()));
+		user.setAuthorities(authorities);
+		userService.save(user);
 	}
-
 }

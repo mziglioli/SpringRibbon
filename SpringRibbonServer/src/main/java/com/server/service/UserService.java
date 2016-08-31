@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
-import com.core.model.User;
+import com.server.model.User;
 import com.server.repository.UserRepository;
 
 @Service

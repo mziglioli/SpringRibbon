@@ -1,4 +1,4 @@
-package com.server.controller;
+package com.loader.controller;
 
 import java.util.List;
 
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import com.server.model.User;
-import com.server.ribbon.RibbonClientConfiguration;
+import com.loader.model.User;
+import com.loader.ribbon.RibbonClientConfiguration;
 
 @RestController
 @RibbonClient(name = "spring-server", configuration = RibbonClientConfiguration.class)
@@ -36,7 +36,7 @@ public class UserController {
 		//
 		// ResponseEntity<List> responseEntity = restTemplate.exchange(WebServicesURL.ALL_CATEGORIAS, HttpMethod.GET,
 		// requestEntity, List.class);
-		ResponseEntity<List<User>> response = restTemplate.exchange("http://spring-server/user/all", HttpMethod.GET,
+		ResponseEntity<List<User>> response = restTemplate.exchange("http://spring-server/user/", HttpMethod.GET,
 				HttpEntity.EMPTY, new ParameterizedTypeReference<List<User>>() {
 				});
 		return response.getBody();// this.restTemplate.getForObject("http://spring-server/user/all", String.class);

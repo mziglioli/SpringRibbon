@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.core.model.EntityJpaClass;
+import com.server.model.EntityJpaClass;
 
 import lombok.Getter;
 

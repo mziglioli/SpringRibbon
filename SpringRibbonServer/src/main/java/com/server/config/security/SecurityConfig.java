@@ -42,14 +42,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-
 		//@formatter:off
 		http.csrf().disable().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 				.and()
 					.anonymous()
 				.and()
 					.authorizeRequests()
-						.antMatchers("/user/**").authenticated()
+						//FIXME
+						.antMatchers("/user/**").permitAll()
+						.antMatchers("/admin/**").authenticated()
 						.antMatchers("/**").permitAll()
 				.and()
 					.addFilterBefore(new LoginFilter("/login", tokenAuthenticationService(), userDetailsService(),

@@ -15,11 +15,11 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-import com.core.model.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.server.config.security.auth.UserAuthentication;
 import com.server.config.security.service.TokenAuthenticationService;
 import com.server.config.security.service.UserDetailsService;
+import com.server.model.User;
 
 public class LoginFilter extends AbstractAuthenticationProcessingFilter {
 

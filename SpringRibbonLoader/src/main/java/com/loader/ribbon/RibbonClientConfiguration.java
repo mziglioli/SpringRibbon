@@ -1,4 +1,4 @@
-package com.server.ribbon;
+package com.loader.ribbon;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

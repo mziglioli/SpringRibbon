@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AccountStatusUserDetailsChecker;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
-import com.core.model.User;
+import com.server.model.User;
 import com.server.repository.UserRepository;
 
 public class UserDetailsService implements org.springframework.security.core.userdetails.UserDetailsService {

@@ -9,9 +9,9 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 import org.springframework.web.util.WebUtils;
 
-import com.core.model.User;
 import com.server.config.security.auth.UserAuthentication;
 import com.server.config.security.token.TokenHandler;
+import com.server.model.User;
 
 @Service
 public class TokenAuthenticationService {

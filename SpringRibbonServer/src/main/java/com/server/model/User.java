@@ -3,11 +3,21 @@ package com.server.model;
 import java.io.Serializable;
 import java.util.Collection;
 
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.server.tipo.Status;
+import com.server.util.Catalago;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -22,16 +32,30 @@ import lombok.ToString;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = false, of = { "id" })
 @ToString(callSuper = false, of = { "id", "nome" })
+@Entity
+@Table(name = "user", catalog = Catalago.DB_NAME)
 public class User implements EntityJpaClass, Serializable, UserDetails {
 
-	private static final long serialVersionUID = -8984729078206143726L;
+	private static final long serialVersionUID = 442738873666572571L;
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+
+	@Column
 	private String nome;
+
+	@Column(nullable = true)
 	private String username;
+
 	@JsonIgnore
+	@Column(nullable = true)
 	private String password;
+
+	@Column
 	private String status;
+
+	@ElementCollection(fetch = FetchType.EAGER)
 	private Collection<UserAuthority> authorities;
 
 	@JsonIgnore

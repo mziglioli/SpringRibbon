@@ -11,11 +11,11 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-import com.core.model.EntityJpaClass;
-import com.core.util.Catalago;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.server.controller.ControllerDefault;
+import com.server.model.EntityJpaClass;
 import com.server.service.ServicePackage;
+import com.server.util.Catalago;
 
 @Configuration
 @EnableWebMvc

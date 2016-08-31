@@ -3,8 +3,8 @@ package com.server.config.security.token;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.core.model.User;
 import com.server.config.security.service.UserDetailsService;
+import com.server.model.User;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

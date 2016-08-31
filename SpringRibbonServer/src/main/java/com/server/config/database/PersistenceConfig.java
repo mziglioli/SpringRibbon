@@ -17,9 +17,9 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import com.core.model.EntityJpaClass;
-import com.core.util.Catalago;
+import com.server.model.EntityJpaClass;
 import com.server.repository.RepositoryPackage;
+import com.server.util.Catalago;
 
 @Configuration
 @EnableTransactionManagement

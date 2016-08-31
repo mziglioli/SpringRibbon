@@ -7,7 +7,7 @@ import org.springframework.security.access.vote.RoleVoter;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 
-import com.core.util.Catalago;
+import com.server.util.Catalago;
 
 import lombok.NoArgsConstructor;
 
