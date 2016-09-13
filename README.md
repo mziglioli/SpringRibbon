@@ -1,2 +1,2 @@
 # SpringRibbon
-Micro Services with spring and ribbon
+Micro Services with spring eureka and ribbon
